@@ -1,0 +1,78 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty ./objects/binary_libs/sky130hd/sky130_fd_sc_hd__tt_025C_1v80@12800135-1795329516-ed1652ed.blib
+read_db -hier ./results/sky130hd/gcd/base/6_1_fill.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc ./results/sky130hd/gcd/base/6_1_fill.sdc
+source /OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+[WARNING STA-0450] virtual clock vclk_core_clock can not be propagated.
+write_sdc -no_timestamp ./results/sky130hd/gcd/base/6_final.sdc
+write_db ./results/sky130hd/gcd/base/6_final.odb
+Deleted 0 routing obstructions
+Warning: master sky130_ef_sc_hd__decap_12 has signal pins but no liberty cell
+Warning: master sky130_ef_sc_hd__decap_12 has signal pins but no liberty cell
+Elapsed time: 0:00.38[h:]min:sec. CPU time: user 0.35 sys 0.02 (97%). Peak memory: 23252KB.
+Global output passed lec test
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file /OpenROAD-flow-scripts/flow/platforms/sky130hd/rcx_patterns.rules ...
+[INFO RCX-0436] RC segment generation gcd (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 1335 rc segments
+[INFO RCX-0439] Coupling Cap extraction gcd ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 54% of 2649 wires extracted
+[INFO RCX-0442] 100% of 2649 wires extracted
+[INFO RCX-0045] Extract 473 nets, 1808 rsegs, 1808 caps, 2459 ccs
+[INFO RCX-0443] 473 nets finished
+[INFO PSM-0040] All shapes on net VDD are connected.
+########## IR report #################
+Net              : VDD
+Corner           : default
+Total power      : 5.52e-03 W
+Supply voltage   : 1.80e+00 V
+Worstcase voltage: 1.80e+00 V
+Average voltage  : 1.80e+00 V
+Average IR drop  : 3.51e-04 V
+Worstcase IR drop: 8.21e-04 V
+Percentage drop  : 0.05 %
+######################################
+[INFO PSM-0040] All shapes on net VSS are connected.
+########## IR report #################
+Net              : VSS
+Corner           : default
+Total power      : 5.52e-03 W
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 8.25e-04 V
+Average voltage  : 1.65e-04 V
+Average IR drop  : 1.65e-04 V
+Worstcase IR drop: 8.25e-04 V
+Percentage drop  : 0.05 %
+######################################
+Cell type report:                       Count       Area
+  Fill cell                               417    1505.19
+  Tap cell                                 75      93.84
+  Clock buffer                              6      82.58
+  Timing Repair Buffer                    166    1156.11
+  Inverter                                  5      18.77
+  Clock inverter                            2      35.03
+  Sequential cell                          35    1024.73
+  Multi-Input combinational cell          226    1969.39
+  Total                                   932    5885.64
+Report metrics stage 6, finish...
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 4380 um^2 74% utilization.
+Authorization required, but no authorization protocol specified
+
+[WARNING GUI-0076] could not connect to display :0
+[WARNING GUI-0076] From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+[INFO GUI-0075] Could not load the Qt platform plugin "xcb" in "" even though it was found.
+Elapsed time: 0:04.02[h:]min:sec. CPU time: user 3.80 sys 1.12 (122%). Peak memory: 176056KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+6_report                             0        0     0.97       22 N/A

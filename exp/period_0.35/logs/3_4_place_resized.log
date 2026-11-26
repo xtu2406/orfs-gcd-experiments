@@ -1,0 +1,105 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty ./objects/binary_libs/nangate45/NangateOpenCellLibrary_typical@6692032-1795329516-5fd7c1ec.blib
+read_db ./results/nangate45/gcd/base/3_3_place_gp.odb
+read_sdc ./results/nangate45/gcd/base/3_3_place_gp.sdc
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+estimate_parasitics
+Perform buffer insertion and gate resizing...
+repair_design -verbose
+Iteration |   Area    | Resized | Buffers | Nets repaired | Remaining
+---------------------------------------------------------------------
+        0 |     +0.0% |       0 |       0 |             0 |       714
+       10 |     +0.0% |       0 |       0 |             0 |       704
+       20 |     +0.0% |       0 |       0 |             0 |       694
+       30 |     +0.0% |       0 |       0 |             0 |       684
+       40 |     +0.0% |       0 |       0 |             0 |       674
+       50 |     +0.0% |       0 |       0 |             0 |       664
+       60 |     +0.0% |       0 |       0 |             0 |       654
+       70 |     +0.0% |       0 |       0 |             0 |       644
+       80 |     +0.0% |       0 |       0 |             0 |       634
+       90 |     +0.0% |       0 |       0 |             0 |       624
+      100 |     +0.0% |       0 |       0 |             0 |       614
+      110 |     +0.0% |       0 |       0 |             0 |       604
+      120 |     +0.0% |       0 |       0 |             0 |       594
+      130 |     +0.0% |       0 |       0 |             0 |       584
+      140 |     +0.0% |       0 |       0 |             0 |       574
+      150 |     +0.0% |       0 |       0 |             0 |       564
+      160 |     +0.0% |       0 |       0 |             0 |       554
+      170 |     +0.0% |       0 |       0 |             0 |       544
+      180 |     +0.0% |       0 |       0 |             0 |       534
+      190 |     +0.0% |       0 |       0 |             0 |       524
+      200 |     +0.0% |       0 |       0 |             0 |       514
+      210 |     +0.0% |       0 |       0 |             0 |       504
+      220 |     +0.0% |       0 |       0 |             0 |       494
+      230 |     +0.0% |       0 |       0 |             0 |       484
+      240 |     +0.0% |       0 |       0 |             0 |       474
+      250 |     +0.0% |       0 |       0 |             0 |       464
+      260 |     +0.0% |       0 |       0 |             0 |       454
+      270 |     +0.0% |       0 |       0 |             0 |       444
+      280 |     +0.0% |       0 |       0 |             0 |       434
+      290 |     +0.0% |       0 |       0 |             0 |       424
+      300 |     +0.0% |       0 |       0 |             0 |       414
+      310 |     +0.0% |       0 |       0 |             0 |       404
+      320 |     +0.0% |       0 |       0 |             0 |       394
+      330 |     +0.0% |       0 |       0 |             0 |       384
+      340 |     +0.0% |       0 |       0 |             0 |       374
+      350 |     +0.0% |       0 |       0 |             0 |       364
+      360 |     +0.0% |       0 |       0 |             0 |       354
+      370 |     +0.0% |       0 |       0 |             0 |       344
+      380 |     +0.0% |       0 |       0 |             0 |       334
+      390 |     +0.0% |       0 |       0 |             0 |       324
+      400 |     +0.0% |       0 |       0 |             0 |       314
+      410 |     +0.0% |       0 |       0 |             0 |       304
+      420 |     +0.0% |       0 |       0 |             0 |       294
+      430 |     +0.0% |       0 |       0 |             0 |       284
+      440 |     +0.0% |       0 |       0 |             0 |       274
+      450 |     +0.0% |       0 |       0 |             0 |       264
+      460 |     +0.0% |       0 |       0 |             0 |       254
+      470 |     +0.0% |       0 |       0 |             0 |       244
+      480 |     +0.0% |       0 |       0 |             0 |       234
+      490 |     +0.0% |       0 |       0 |             0 |       224
+      500 |     +0.0% |       0 |       0 |             0 |       214
+      510 |     +0.0% |       0 |       0 |             0 |       204
+      520 |     +0.0% |       0 |       0 |             0 |       194
+      530 |     +0.0% |       0 |       0 |             0 |       184
+      540 |     +0.0% |       0 |       0 |             0 |       174
+      550 |     +0.0% |       0 |       0 |             0 |       164
+      560 |     +0.0% |       0 |       0 |             0 |       154
+      570 |     +0.0% |       0 |       0 |             0 |       144
+      580 |     +0.0% |       0 |       0 |             0 |       134
+      590 |     +0.0% |       0 |       0 |             0 |       124
+      600 |     +0.0% |       0 |       0 |             0 |       114
+      610 |     +0.0% |       0 |       0 |             0 |       104
+      620 |     +0.0% |       0 |       0 |             0 |        94
+      630 |     +0.0% |       0 |       0 |             0 |        84
+      640 |     +0.0% |       0 |       0 |             0 |        74
+      650 |     +0.0% |       0 |       0 |             0 |        64
+      660 |     +0.0% |       0 |       0 |             0 |        54
+      670 |     +0.0% |       0 |       0 |             0 |        44
+      680 |     +0.0% |       0 |       0 |             0 |        34
+      690 |     +0.0% |       0 |       0 |             0 |        24
+      700 |     +0.0% |       0 |       0 |             0 |        14
+      710 |     +0.0% |       0 |       0 |             0 |         4
+    final |     +0.0% |       0 |       0 |             0 |         0
+---------------------------------------------------------------------
+[INFO RSZ-0504] Runtime: 0.08s
+Floating nets: 
+Report metrics stage 3, resizer...
+
+==========================================================================
+resizer report_design_area
+--------------------------------------------------------------------------
+Design area 768 um^2 71% utilization.
+Instance count before 689, after 689
+Pin count before 1873, after 1873
+write_sdc -no_timestamp ./results/nangate45/gcd/base/3_4_place_resized.sdc
+write_db ./results/nangate45/gcd/base/3_4_place_resized.odb
+Elapsed time: 0:01.52[h:]min:sec. CPU time: user 1.30 sys 0.27 (103%). Peak memory: 221096KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+3_4_place_resized      .odb          1        2     1.03      215 d8ba125d55
+3_4_place_resized      .sdc                                       c913820e4e

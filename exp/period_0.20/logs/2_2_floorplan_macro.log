@@ -1,0 +1,18 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty ./objects/binary_libs/nangate45/NangateOpenCellLibrary_typical@6692032-1795329516-5fd7c1ec.blib
+read_db ./results/nangate45/gcd/base/2_1_floorplan.odb
+read_sdc ./results/nangate45/gcd/base/2_1_floorplan.sdc
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+No macros found: Skipping macro_placement
+Design area 675 um^2 63% utilization.
+write_sdc -no_timestamp ./results/nangate45/gcd/base/2_2_floorplan_macro.sdc
+write_db ./results/nangate45/gcd/base/2_2_floorplan_macro.odb
+Elapsed time: 0:00.73[h:]min:sec. CPU time: user 0.60 sys 0.11 (97%). Peak memory: 100968KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+2_2_floorplan_macro    .odb          0        1     0.97       98 b3eb4f7fad
+2_2_floorplan_macro    .sdc                                       5176ab914a

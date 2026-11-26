@@ -1,0 +1,116 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty ./objects/binary_libs/sky130hd/sky130_fd_sc_hd__tt_025C_1v80@12800135-1795329516-ed1652ed.blib
+read_db -hier ./results/sky130hd/gcd/base/3_place.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc ./results/sky130hd/gcd/base/3_place.sdc
+source /OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+clock_tree_synthesis -sink_clustering_enable -repair_clock_nets
+[INFO CTS-0050] Root buffer is sky130_fd_sc_hd__clkbuf_8.
+[INFO CTS-0051] Sink buffer is sky130_fd_sc_hd__clkbuf_16.
+[INFO CTS-0052] The following clock buffers will be used for CTS:
+                    sky130_fd_sc_hd__clkbuf_8
+                    sky130_fd_sc_hd__clkbuf_16
+[INFO CTS-0049] Characterization buffer is sky130_fd_sc_hd__clkbuf_16.
+[INFO CTS-0007] Net "clk" found for clock "core_clock".
+[INFO CTS-0010]  Clock net "clk" has 35 sinks.
+[INFO CTS-0008] TritonCTS found 1 clock nets.
+[INFO CTS-0097] Characterization used 2 buffer(s) types.
+[INFO CTS-0201] 0 blockages from hard placement blockages and placed macros will be used.
+[INFO CTS-0027] Generating H-Tree topology for net clk.
+[INFO CTS-0028]  Total number of sinks: 35.
+[INFO CTS-0090]  Sinks will be clustered based on buffer max cap.
+[INFO CTS-0030]  Number of static layers: 0.
+[INFO CTS-0020]  Wire segment unit: 13600  dbu (13 um).
+[INFO CTS-0023]  Original sink region: [(1645, 4020), (70110, 77580)].
+[INFO CTS-0024]  Normalized sink region: [(0.120956, 0.295588), (5.15515, 5.70441)].
+[INFO CTS-0025]     Width:  5.0342.
+[INFO CTS-0026]     Height: 5.4088.
+ Level 1
+    Direction: Vertical
+    Sinks per sub-region: 18
+    Sub-region size: 5.0342 X 2.7044
+[INFO CTS-0034]     Segment length (rounded): 1.
+ Level 2
+    Direction: Horizontal
+    Sinks per sub-region: 9
+    Sub-region size: 2.5171 X 2.7044
+[INFO CTS-0034]     Segment length (rounded): 1.
+[INFO CTS-0038]  Stop criterion found. Sink region hpwl is smaller than max wirelength (1911.535 um) and max number of sinks is 15.
+[INFO CTS-0035]  Number of sinks covered: 35.
+[INFO CTS-0018]     Created 5 clock buffers.
+[INFO CTS-0012]     Minimum number of buffers in the clock path: 2.
+[INFO CTS-0013]     Maximum number of buffers in the clock path: 2.
+[INFO CTS-0015]     Created 5 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 8:2, 9:1, 10:1..
+[INFO CTS-0017]     Max level of the clock tree: 2.
+[INFO CTS-0098] Clock net "clk"
+[INFO CTS-0099]  Sinks 38
+[INFO CTS-0100]  Leaf buffers 0
+[INFO CTS-0101]  Average sink wire length 119.19 um
+[INFO CTS-0102]  Path depth 2 - 2
+[INFO CTS-0207]  Dummy loads inserted 3
+[INFO CTS-0500] Runtime: 1.06s
+detailed_placement -quiet
+[INFO DPL-0009] Utilization: 60.5%
+[INFO DPL-0501] Legalized with 244 moves: displacement total 401.5 u, max 11.0 u; HPWL 5551.5 -> 5788.3 u (+4.3 %).
+[INFO DPL-0500] Runtime: 0.01s
+estimate_parasitics
+Warning: master sky130_ef_sc_hd__decap_12 has signal pins but no liberty cell
+repair_timing -setup_margin 0 -hold_margin 0 -phases PARALLEL_EVAL -repair_tns 100 -match_cell_footprint -verbose
+[WARNING RSZ-2024] Experimental repair setup policy 'SetupParallelEvalPolicy' selected. Do not use this for production.
+   Iter   | Removed | Resized | Inserted | Cloned |  Pin  |   Area   |    WNS   |    TNS     |  Viol  |  Worst
+          | Buffers |  Gates  | Buffers  |  Gates | Swaps |          |          |            | Endpts | Endpoint
+------------------------------------------------------------------------------------------------------------------------------
+       0* |       0 |       0 |        0 |      0 |     0 |    +0.0% |   -0.130 |       -1.6 |     29 | resp_msg[11]
+       1* |       0 |       0 |        0 |      0 |     0 |    +0.0% |   -0.130 |       -1.6 |     29 | resp_msg[11]
+       2* |       0 |      13 |        0 |      0 |     0 |    +0.2% |   -0.121 |       -1.0 |     29 | resp_msg[15]
+       3* |       0 |      13 |        0 |      0 |     0 |    +0.2% |   -0.121 |       -1.0 |     29 | resp_msg[15]
+       4* |       0 |      14 |        3 |      0 |     0 |    +0.9% |   -0.121 |       -1.0 |     29 | resp_msg[15]
+       5* |       1 |      16 |        3 |      0 |     0 |    +0.9% |   -0.121 |       -0.6 |     10 | resp_msg[15]
+       6* |       1 |      16 |        3 |      0 |     0 |    +0.9% |   -0.121 |       -0.6 |     10 | resp_msg[15]
+       7* |       1 |      16 |        3 |      0 |     0 |    +0.9% |   -0.121 |       -0.6 |     10 | resp_msg[15]
+       8* |       1 |      16 |        3 |      0 |     0 |    +0.9% |   -0.121 |       -0.6 |     10 | resp_msg[15]
+       9* |       1 |      16 |        3 |      0 |     1 |    +0.9% |   -0.120 |       -0.6 |     10 | resp_msg[11]
+      10* |       1 |      17 |        3 |      0 |     2 |    +1.1% |   -0.110 |       -0.5 |      9 | resp_msg[15]
+      11* |       1 |      17 |        3 |      0 |     2 |    +1.1% |   -0.110 |       -0.5 |      9 | resp_msg[15]
+      12* |       1 |      18 |        3 |      0 |     2 |    +1.2% |   -0.109 |       -0.4 |      5 | resp_msg[15]
+      13* |       1 |      19 |        4 |      0 |     2 |    +1.5% |   -0.097 |       -0.2 |      4 | resp_msg[14]
+      14* |       1 |      23 |        4 |      0 |     2 |    +2.0% |   -0.061 |       -0.3 |     11 | resp_msg[14]
+      15* |       1 |      27 |        4 |      0 |     4 |    +2.7% |   -0.040 |       -0.1 |      6 | resp_msg[14]
+      16* |       2 |      32 |        4 |      0 |     6 |    +2.6% |   -0.035 |       -0.0 |      1 | resp_msg[15]
+      17* |       2 |      33 |        4 |      0 |     7 |    +2.6% |   -0.001 |       -0.0 |      1 | resp_msg[11]
+    final |       2 |      34 |        4 |      0 |     8 |    +2.7% |    0.004 |        0.0 |      0 | resp_msg[14]
+------------------------------------------------------------------------------------------------------------------------------
+[INFO RSZ-0059] Removed 2 buffers.
+[INFO RSZ-0040] Inserted 4 buffers.
+[INFO RSZ-0051] Resized 34 instances: 33 up, 0 up match, 1 down, 0 VT
+[INFO RSZ-0043] Swapped pins on 8 instances.
+[INFO RSZ-0505] Runtime: 0.92s
+[INFO RSZ-0033] No hold violations found.
+[INFO RSZ-0506] Runtime: 0.00s
+Warning: master sky130_ef_sc_hd__decap_12 has signal pins but no liberty cell
+Elapsed time: 0:00.35[h:]min:sec. CPU time: user 0.32 sys 0.02 (98%). Peak memory: 22820KB.
+Repair timing output passed lec test
+detailed_placement -quiet
+[INFO DPL-0009] Utilization: 62.1%
+[INFO DPL-0501] Legalized with 258 moves: displacement total 81.4 u, max 10.9 u; HPWL 5816.6 -> 5946.0 u (+2.2 %).
+[INFO DPL-0500] Runtime: 0.00s
+check_placement -placeable -verbose
+estimate_parasitics
+Report metrics stage 4, cts final...
+
+==========================================================================
+cts final report_design_area
+--------------------------------------------------------------------------
+Design area 3657 um^2 62% utilization.
+write_sdc -no_timestamp ./results/sky130hd/gcd/base/4_1_cts.sdc
+write_db ./results/sky130hd/gcd/base/4_1_cts.odb
+Elapsed time: 0:03.35[h:]min:sec. CPU time: user 3.04 sys 0.64 (109%). Peak memory: 259332KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+4_1_cts                .odb          0        0     0.97       22 6c21b88ffb
+4_1_cts                .sdc                                       6960b0655b

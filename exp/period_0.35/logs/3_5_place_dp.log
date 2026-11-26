@@ -1,0 +1,126 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty ./objects/binary_libs/nangate45/NangateOpenCellLibrary_typical@6692032-1795329516-5fd7c1ec.blib
+read_db ./results/nangate45/gcd/base/3_4_place_resized.odb
+read_sdc ./results/nangate45/gcd/base/3_4_place_resized.sdc
+source /OpenROAD-flow-scripts/flow/platforms/nangate45/setRC.tcl
+detailed_placement
+[INFO DPL-0006] Core area: 1076.77 um^2
+[INFO DPL-0007] Movable instances area: 756.24 um^2
+[INFO DPL-0008] Fixed instances area within core: 12.24 um^2
+[INFO DPL-0009] Utilization: 71.4%
+[INFO DPL-0005] Diamond search max displacement: +/- 500 sites horizontally, +/- 100 rows vertically.
+[INFO DPL-1102] Legalizing using negotiation legalizer.
+[INFO DPL-1103] Negotiation base search window: +/-20 sites horizontally, +/-5 rows vertically 
+	Automatic search window extension enabled.
+	Search window extendable up to the max displacement cap of +/-500 sites, +/-100 rows near walls.
+[INFO DPL-1104] NegotiationLegalizer DRC penalty: 5.
+[INFO DPL-0392] Negotiation cell height distribution (1 unique row-count(s)):
+[INFO DPL-0393]   height 1 row(s): 689 cells
+          |      Total |  Illegal |  Illegal
+Iteration | Violations |    Cells |    Sites
+---------------------------------------------
+        0 |        521 |       163 |       355
+        1 |         41 |        13 |        28
+        2 |         15 |         3 |        12
+        3 |          0 |         0 |         0
+Negotiation phase 1 converged at iteration 3.
+[INFO DPL-0500] Runtime: 0.01s
+Detailed Placement Analysis
+---------------------------------
+legalizer            negotiation
+total moves                 754
+total displacement        891.7 u
+average displacement        1.3 u
+max displacement            4.6 u
+original HPWL            3078.5 u
+legalized HPWL           3621.8 u
+delta HPWL                   18 %
+
+improve_placement -max_displacement "5 1"
+Detailed placement improvement.
+[INFO DPL-0401] Setting random seed to 1.
+[INFO DPL-0402] Setting maximum displacement 5 1 to 14000 2800 units.
+[INFO DPL-0320] Collected 100 fixed cells.
+[INFO DPL-0318] Collected 643 single height cells.
+[INFO DPL-0321] Collected 0 wide cells.
+[INFO DPL-0322] Image (2280, 2800) - (69160, 67200)
+[INFO DPL-0310] Assigned 643 cells into segments.  Movement in X-direction is 0.000000, movement in Y-direction is 0.000000.
+[INFO DPL-0313] Found 0 cells in wrong regions.
+[INFO DPL-0315] Found 0 row alignment problems.
+[INFO DPL-0314] Found 0 site alignment problems.
+[INFO DPL-0311] Found 0 overlaps between adjacent cells.
+[INFO DPL-0312] Found 0 edge spacing violations and 0 padding violations.
+[INFO DPL-0303] Running algorithm for independent set matching.
+[INFO DPL-0300] Set matching objective is wirelength.
+[INFO DPL-0301] Pass   1 of matching; objective is 7.233280e+06.
+[INFO DPL-0301] Pass   2 of matching; objective is 7.152430e+06.
+[INFO DPL-0302] End of matching; objective is 7.152430e+06, improvement is 1.12 percent.
+[INFO DPL-0303] Running algorithm for global swaps.
+[INFO DPL-0306] Pass   1 of global swaps; hpwl is 6.971990e+06.
+[INFO DPL-0306] Pass   2 of global swaps; hpwl is 6.934355e+06.
+[INFO DPL-0307] End of global swaps; objective is 6.934355e+06, improvement is 3.05 percent.
+[INFO DPL-0303] Running algorithm for vertical swaps.
+[INFO DPL-0308] Pass   1 of vertical swaps; hpwl is 6.893515e+06.
+[INFO DPL-0309] End of vertical swaps; objective is 6.893515e+06, improvement is 0.59 percent.
+[INFO DPL-0303] Running algorithm for reordering.
+[INFO DPL-0304] Pass   1 of reordering; objective is 6.832840e+06.
+[INFO DPL-0305] End of reordering; objective is 6.832840e+06, improvement is 0.88 percent.
+[INFO DPL-0303] Running algorithm for random improvement.
+[INFO DPL-0324] Random improver is using random generator.
+[INFO DPL-0325] Random improver is using hpwl objective.
+[INFO DPL-0326] Random improver cost string is (a).
+[INFO DPL-0332] End of pass, Generator random called 12860 times.
+[INFO DPL-0335] Generator random, Cumulative attempts 12860, swaps 2891, moves  2812 since last reset.
+[INFO DPL-0333] End of pass, Objective hpwl, Initial cost 6.832840e+06, Scratch cost 6.725210e+06, Incremental cost 6.725210e+06, Mismatch? N
+[INFO DPL-0338] End of pass, Total cost is 6.725210e+06.
+[INFO DPL-0327] Pass   1 of random improver; improvement in cost is 1.58 percent.
+[INFO DPL-0332] End of pass, Generator random called 12860 times.
+[INFO DPL-0335] Generator random, Cumulative attempts 25720, swaps 5891, moves  5395 since last reset.
+[INFO DPL-0333] End of pass, Objective hpwl, Initial cost 6.725210e+06, Scratch cost 6.676310e+06, Incremental cost 6.676310e+06, Mismatch? N
+[INFO DPL-0338] End of pass, Total cost is 6.676310e+06.
+[INFO DPL-0327] Pass   2 of random improver; improvement in cost is 0.73 percent.
+[INFO DPL-0328] End of random improver; improvement is 2.290848 percent.
+[INFO DPL-0380] Cell flipping.
+[INFO DPL-0382] Changed 0 cell orientations for row compatibility.
+[INFO DPL-0383] Performed 201 cell flips.
+[INFO DPL-0384] End of flipping; objective is 6.539690e+06, improvement is 2.05 percent.
+[INFO DPL-0313] Found 0 cells in wrong regions.
+[INFO DPL-0315] Found 0 row alignment problems.
+[INFO DPL-0314] Found 0 site alignment problems.
+[INFO DPL-0311] Found 0 overlaps between adjacent cells.
+[INFO DPL-0312] Found 0 edge spacing violations and 0 padding violations.
+Place Optimization Analysis
+---------------------------------
+total attempts            38580
+relocated cells             429
+total displacement        597.2 u
+average displacement        1.4 u
+max displacement            6.7 u
+original HPWL            3621.8 u
+improved HPWL            3275.1 u
+delta HPWL                  -10 %
+
+optimize_mirroring
+[INFO DPL-0020] Mirrored 37 instances
+[INFO DPL-0021] HPWL before            3275.1 u
+[INFO DPL-0022] HPWL after             3273.1 u
+[INFO DPL-0023] HPWL delta               -0.1 %
+[INFO FLW-0012] Placement violations .
+estimate_parasitics
+Report metrics stage 3, detailed place...
+
+==========================================================================
+detailed place report_design_area
+--------------------------------------------------------------------------
+Design area 768 um^2 71% utilization.
+write_sdc -no_timestamp ./results/nangate45/gcd/base/3_5_place_dp.sdc
+write_db ./results/nangate45/gcd/base/3_5_place_dp.odb
+Elapsed time: 0:01.57[h:]min:sec. CPU time: user 1.38 sys 0.26 (104%). Peak memory: 218392KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+3_5_place_dp           .odb          1        2     1.04      213 24d62cd3cf
+3_5_place_dp           .sdc                                       c913820e4e

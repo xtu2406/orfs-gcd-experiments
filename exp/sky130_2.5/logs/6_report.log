@@ -1,0 +1,77 @@
+OpenROAD unknown 
+Features included (+) or not (-): -GPU +GUI
+This program is licensed under the BSD-3 license. See the LICENSE file for details.
+Components of this program may be licensed under more restrictive licenses which must be honored.
+[INFO ORD-0030] Using 4 thread(s).
+read_liberty ./objects/binary_libs/sky130hd/sky130_fd_sc_hd__tt_025C_1v80@12800135-1795329516-ed1652ed.blib
+read_db -hier ./results/sky130hd/gcd/base/6_1_fill.odb
+[WARNING ORD-0012] Hierarchical flow (-hier) is currently in development and may cause multiple issues. Do not use in production environments.
+read_sdc ./results/sky130hd/gcd/base/6_1_fill.sdc
+source /OpenROAD-flow-scripts/flow/platforms/sky130hd/setRC.tcl
+[WARNING STA-0450] virtual clock vclk_core_clock can not be propagated.
+write_sdc -no_timestamp ./results/sky130hd/gcd/base/6_final.sdc
+write_db ./results/sky130hd/gcd/base/6_final.odb
+Deleted 0 routing obstructions
+Warning: master sky130_ef_sc_hd__decap_12 has signal pins but no liberty cell
+Warning: master sky130_ef_sc_hd__decap_12 has signal pins but no liberty cell
+Elapsed time: 0:00.35[h:]min:sec. CPU time: user 0.33 sys 0.02 (98%). Peak memory: 23256KB.
+Global output passed lec test
+[INFO RCX-0431] Defined process_corner X with ext_model_index 0
+[INFO RCX-0029] Defined extraction corner X
+[INFO RCX-0435] Reading extraction model file /OpenROAD-flow-scripts/flow/platforms/sky130hd/rcx_patterns.rules ...
+[INFO RCX-0436] RC segment generation gcd (max_merge_res 50.0) ...
+[INFO RCX-0040] Final 1281 rc segments
+[INFO RCX-0439] Coupling Cap extraction gcd ...
+[INFO RCX-0440] Coupling threshhold is 0.1000 fF, coupling capacitance less than 0.1000 fF will be grounded.
+[INFO RCX-0442] 54% of 2535 wires extracted
+[INFO RCX-0442] 100% of 2535 wires extracted
+[INFO RCX-0045] Extract 431 nets, 1712 rsegs, 1712 caps, 2288 ccs
+[INFO RCX-0443] 431 nets finished
+[INFO PSM-0040] All shapes on net VDD are connected.
+########## IR report #################
+Net              : VDD
+Corner           : default
+Total power      : 2.10e-03 W
+Supply voltage   : 1.80e+00 V
+Worstcase voltage: 1.80e+00 V
+Average voltage  : 1.80e+00 V
+Average IR drop  : 1.33e-04 V
+Worstcase IR drop: 3.54e-04 V
+Percentage drop  : 0.02 %
+######################################
+[INFO PSM-0040] All shapes on net VSS are connected.
+########## IR report #################
+Net              : VSS
+Corner           : default
+Total power      : 2.10e-03 W
+Supply voltage   : 0.00e+00 V
+Worstcase voltage: 2.68e-04 V
+Average voltage  : 6.30e-05 V
+Average IR drop  : 6.30e-05 V
+Worstcase IR drop: 2.68e-04 V
+Percentage drop  : 0.01 %
+######################################
+Cell type report:                       Count       Area
+  Fill cell                               506    2142.05
+  Tap cell                                 75      93.84
+  Clock buffer                              8     100.10
+  Timing Repair Buffer                    124     784.50
+  Inverter                                  5      18.77
+  Sequential cell                          35    1020.98
+  Multi-Input combinational cell          226    1725.40
+  Total                                   979    5885.64
+Report metrics stage 6, finish...
+
+==========================================================================
+finish report_design_area
+--------------------------------------------------------------------------
+Design area 3744 um^2 64% utilization.
+Authorization required, but no authorization protocol specified
+
+[WARNING GUI-0076] could not connect to display :0
+[WARNING GUI-0076] From 6.5.0, xcb-cursor0 or libxcb-cursor0 is needed to load the Qt xcb platform plugin.
+[INFO GUI-0075] Could not load the Qt platform plugin "xcb" in "" even though it was found.
+Elapsed time: 0:03.83[h:]min:sec. CPU time: user 3.67 sys 1.03 (122%). Peak memory: 174136KB.
+Log                    Ext     Elapsed      CPU     CPU/ Peak Mem sha1sum
+                                     s        s  Elapsed       MB [0:10)
+6_report                             0        0     1.00       22 N/A
